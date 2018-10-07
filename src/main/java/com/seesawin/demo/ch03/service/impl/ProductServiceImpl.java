@@ -1,10 +1,10 @@
-package com.seesawin.demo.ch3.service.impl;
+package com.seesawin.demo.ch03.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.seesawin.demo.ch3.model.ProductBeam;
-import com.seesawin.demo.ch3.service.ProductService;
+import com.seesawin.demo.ch03.model.ProductBeam;
+import com.seesawin.demo.ch03.service.ProductService;
 
 public class ProductServiceImpl implements ProductService{
 

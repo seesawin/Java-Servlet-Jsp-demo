@@ -1,4 +1,4 @@
-package com.seesawin.demo.ch3.model;
+package com.seesawin.demo.ch03.model;
 
 public class ProductBeam {
 	private String id;

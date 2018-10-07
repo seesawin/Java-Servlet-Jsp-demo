@@ -1,4 +1,4 @@
-package com.seesawin.demo.ch3.ctrl;
+package com.seesawin.demo.ch03.ctrl;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.seesawin.demo.ch3.model.ProductBeam;
-import com.seesawin.demo.ch3.service.ProductService;
-import com.seesawin.demo.ch3.service.impl.ProductServiceImpl;
+import com.seesawin.demo.ch03.model.ProductBeam;
+import com.seesawin.demo.ch03.service.ProductService;
+import com.seesawin.demo.ch03.service.impl.ProductServiceImpl;
 
 /**
  * Servlet implementation class FUNC001Servlet
