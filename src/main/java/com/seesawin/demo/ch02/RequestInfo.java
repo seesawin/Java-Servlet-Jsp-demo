@@ -20,7 +20,7 @@ public class RequestInfo extends HttpServlet {
 		out.println("<html>");
 		out.println("<body>");
 		out.println("<head>");
-		out.println("<title>Request Information Example</title>");
+		out.println("<title>CH02-Request Information Example</title>");
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<h2>Request Information Example</h2>");

@@ -44,7 +44,7 @@ public class CH001Servlet extends HttpServlet {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<html><head>");
-			out.println("<title>FUNC001</title>");
+			out.println("<title>CH01-byServlet</title>");
 			out.println("</head>");
 			out.println("<body>");
 			out.write("<pre>回傳HTML字串給瀏覽器，瀏覽器將字串內容編譯成網頁畫面,\r\n");
