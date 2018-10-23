@@ -78,15 +78,5 @@ th {
 	</table>
 	<br>
 	<hr>
-	<%
-		String a = "";
-		request.getParameter("name");
-		response.getWriter();
-		out.print("1");
-		session.getAttribute("name");
-		application.getAttribute("name");
-		config.getServletName();
-		page.getClass();
-	%>
 </body>
 </html>

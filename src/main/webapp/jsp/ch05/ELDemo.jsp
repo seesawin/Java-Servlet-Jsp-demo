@@ -30,16 +30,6 @@
 	
 	<h3>Case2 屬性物件是JavaBean物件==>透過 EL 來取用，\${識別字串.JavaBean的性質}</h3>
 	<font><b>運算標籤取JavaBeam</b></font><br>
-	<%
-		// 注意需要import OrderBean
-		OrderBean ob_a = (OrderBean) request.getAttribute("Case2");
-	%>
-	<font Color='green'> 訂單編號：<%=ob_a.getOrderNo()%><br>
-		訂單日期：<%=ob_a.getOrderDate()%> <br>
-		客戶編號：<%=ob_a.getCustomerID()%> <br>
-		訂單金額：<%=ob_a.getAmount()%> <br>
-	</font><br>
-	
 	<font><b>EL取JavaBeam</b></font><br>
 	<font Color='red'> 訂單編號：${Case2.orderNo} <br>
 		訂單日期：${Case2.orderDate} <br> 

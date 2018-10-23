@@ -3,7 +3,9 @@
 	2.taglib
 	3.include
 	 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"  %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
+<!-- JSTL標籤庫  ，標籤背後都有相對的Java程式在運作-->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -23,4 +25,3 @@
 
 <!-- other jsp -->
 <%-- <%@ include file="xxx.jsp"%> --%>
-
