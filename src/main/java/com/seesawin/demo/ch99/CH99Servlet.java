@@ -25,7 +25,7 @@ public class CH99Servlet extends HttpServlet {
 
 	protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletContext application = getServletContext();
-		application.setAttribute("userName", "Alex");
+		application.setAttribute("proc", "Y");
 		application.setAttribute("remarks", "\"專案\"全局變量，對每個用戶與頁面皆有效");
 		
 		HttpSession session = request.getSession();
@@ -36,6 +36,9 @@ public class CH99Servlet extends HttpServlet {
 		request.setAttribute("remarks", "\"在一次的請求的全部過程\"的變量，這個過程中forward的JSP頁面皆可使用");
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/ch99/ch99_01.jsp");
+		
+		application.setAttribute("proc", "N");
+		
 		rd.forward(request, response);
 	}
 }

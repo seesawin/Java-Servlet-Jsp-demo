@@ -11,7 +11,7 @@
 	<li><a href="jsp/ch07/ch07_index.jsp">CH07-Session management</a>  </li>
 	<li><a href="#">CH08-filter</a>  </li>
 	<li><a href="#">CH09-Listener(XSRF)</a>  </li>
-	<li><a href="#">CH010-MVC pattern and Database</a>  </li>
+	<li><a href="jsp/ch10/ch10_index.jsp">CH010-MVC pattern and Database</a>  </li>
 	<li><a href="jsp/ch99/ch99_index.jsp">CH99-others</a>  </li>
 </ul>
 </body>

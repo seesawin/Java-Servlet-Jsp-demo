@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource name="frankDS" 
+        auth="Container" 
+        type="javax.sql.DataSource" 
+        username="frank" 
+        password="test1234" 
+        maxIdle="30" 
+        maxWait="10000" 
+        maxActive="100" 
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://202.182.103.76:3306/FRANK_DEV"
+        logAbandoned="true" />
+</Context>
