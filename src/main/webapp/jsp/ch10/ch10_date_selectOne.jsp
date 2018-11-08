@@ -3,7 +3,7 @@
 <html>
 <head>
 <%@ include file="/common/html_header.jsp"%>
-<title>CH07-index</title>
+<title>CH10-DATE-SELECTONE</title>
 <style type="text/css">
 table {
 	border-collapse: collapse;

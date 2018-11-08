@@ -28,7 +28,7 @@
 		</ul>
 		<li><span style="color:red;">SessionId必須在每次瀏覽器請求、伺服器回應之間來回傳送，不能中斷任何一次，容器才能依據SessionId來找到對應客戶的HttpSession物件</span></li>
 		<li>由於伺服器記憶體有限，容器無法長時間保存Session物件，因此必須控制session的數量避免資源消耗</li>
-		<li><span style="color:red;">Session的有效範圍能和跨多次請求，此種範圍稱Session scope</span></li>
+		<li><span style="color:red;">Session的有效範圍能跨多次請求，此種範圍稱Session scope</span></li>
 	</ul>
 	
 	<h3>Cookie</h3>
