@@ -1,4 +1,4 @@
-package com.seesawin.demo.ch07;
+package com.seesawin.demo.ch08;
 
 import java.io.IOException;
 
@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/ch07/login")
+import com.seesawin.demo.ch08.model.UserBean;
+
+@WebServlet("/ch08/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,25 +25,11 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 取得HttpSession物件
-		HttpSession session = request.getSession();
-
-		// 驗證是否已經登入
-		Object isLogin = session.getAttribute("isLogin");
-		if (isLogin != null && (boolean) isLogin == true) {
-			// 跳過登入畫面直接進入結果頁面
-			RequestDispatcher rd = request.getRequestDispatcher("/jsp/ch07/ch07_login_result.jsp");
-			rd.forward(request, response);
-			return;
-		}
 
 		String action = request.getParameter("action");
 		if ("init".equals(action)) {
-			// 設置登入flag為false
-			session.setAttribute("isLogin", false);
-
 			// 登入畫面
-			RequestDispatcher rd = request.getRequestDispatcher("/jsp/ch07/ch07_login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/ch08/ch08_login.jsp");
 			rd.forward(request, response);
 			return;
 		} else if ("check".equals(action)) {
@@ -55,13 +43,11 @@ public class LoginServlet extends HttpServlet {
 				isCorrect = true;
 			} else if ("Alec".equals(acct) && "4321".equals(pwd)) {
 				isCorrect = true;
-			} else {
-				session.setAttribute("isLogin", false);
 			}
 
 			if (!isCorrect) {
 				// 登入畫面
-				RequestDispatcher rd = request.getRequestDispatcher("/jsp/ch07/ch07_login.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("/jsp/ch08/ch08_login.jsp");
 				// 設置requetScope變量
 				request.setAttribute("acct", acct);
 				request.setAttribute("pwd", pwd);
@@ -70,14 +56,31 @@ public class LoginServlet extends HttpServlet {
 				rd.forward(request, response);
 			} else {
 				// 結果畫面
-				RequestDispatcher rd = request.getRequestDispatcher("/jsp/ch07/ch07_login_result.jsp");
-				session.setAttribute("acct", request.getParameter("acct"));
 
-				// 設置sessionScope變量，登入flag為true
-				session.setAttribute("isLogin", true);
+				UserBean user = new UserBean();
+				user.setAcct(acct);
+				user.setPwd(pwd);
+
+				// 取得HttpSession物件
+				HttpSession session = request.getSession();
+
+				// set user
+				session.setAttribute("user", user);
+				
+				RequestDispatcher rd = request.getRequestDispatcher("/ch08/product");
 				rd.forward(request, response);
 				return;
 			}
+		} else if ("logOut".equals(action)) {
+			// 取得HttpSession物件
+			HttpSession session = request.getSession();
+
+			// clean user
+			session.setAttribute("user", null);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/ch08/ch08_index.jsp");
+			rd.forward(request, response);
+			return;
 		}
 	}
 }

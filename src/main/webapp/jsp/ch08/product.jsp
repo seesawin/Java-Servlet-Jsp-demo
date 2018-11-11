@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="/common/include.jsp"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CH03-product(MVC)</title>
+<%@ include file="/common/html_header.jsp"%>
+<title>CH08-product(MVC)</title>
 <style type="text/css">
 table {
 	border-collapse: collapse;
@@ -26,8 +26,14 @@ th {
 </style>
 </head>
 <body>
-
-	<form action="/Java-Servlet-Jsp-demo/ch03/01" method="POST">
+	<div>
+		Hi:${sessionScope.user.acct}
+		<form action="${ctx}/ch08/login" >
+			<input type="hidden" name="action" method="POST" value="logOut">
+			<input type="submit" value="登出">
+		</form>
+	</div>
+	<form action="${ctx}/ch08/product" method="POST">
 		Name:<input type="text" name="name" value="${name}">
 		<input type="submit" value="confirm">
 	</form>
@@ -49,5 +55,6 @@ th {
 			</c:forEach>
 		</tbody>
 	</table>
+	<div><a href="<c:out value='${ctx}'/>/jsp/ch08/ch08_index.jsp">回首頁</a></div>
 </body>
 </html>

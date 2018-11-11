@@ -11,6 +11,20 @@
 	<session-config>
 		<session-timeout>1</session-timeout>
 	</session-config>
+	
+	<!-- system Variable -->
+	<context-param>
+		<param-name>projectName</param-name>
+		<param-value>Java-Servlet-JSP-demo</param-value>
+	</context-param>
+	<context-param>
+		<param-name>Owasp.CsrfGuard.Config</param-name>
+		<param-value>WEB-INF/Owasp.CsrfGuard.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>Owasp.CsrfGuard.Config.Print</param-name>
+		<param-value>true</param-value>
+	</context-param>
 
 	<!-- Request Listener -->
 	<listener>
@@ -25,6 +39,13 @@
 	<!-- Context Listener -->
 	<listener>
 		<listener-class>
+			com.seesawin.demo.ch09.linstener.HttpServletContextLinstener
+		</listener-class>
+	</listener>
+	
+	<!-- Context Listener CSRF Guard -->
+	<listener>
+		<listener-class>
 			org.owasp.csrfguard.CsrfGuardServletContextListener
 		</listener-class>
 	</listener>
@@ -35,14 +56,6 @@
 <!-- 		</listener-class> -->
 <!-- 	</listener> -->
 
-	<context-param>
-		<param-name>Owasp.CsrfGuard.Config</param-name>
-		<param-value>WEB-INF/Owasp.CsrfGuard.properties</param-value>
-	</context-param>
-	<context-param>
-		<param-name>Owasp.CsrfGuard.Config.Print</param-name>
-		<param-value>true</param-value>
-	</context-param>
 
 <!-- 	<filter> -->
 <!-- 		<filter-name>CSRFGuard</filter-name> -->
